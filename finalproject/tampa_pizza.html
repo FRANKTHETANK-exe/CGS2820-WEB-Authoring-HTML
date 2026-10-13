@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="pizza, best pizza, Tampa, Tampa Pizza Company, vegan pizza, vegetarian pizza">
+  <title>Tampa Pizza Company</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Best Pizza in Tampa">
+    <nav id="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="eddie_sams.html">Eddie & Sam's NY Pizza</a></li>
+        <li><a href="bavaros.html">Bavaro’s Pizza</a></li>
+        <li><a href="westshore.html">Westshore Pizza</a></li>
+        <li><a href="tampa_pizza.html" class="menu-chosen">Tampa Pizza Company</a></li>
+        <li><a href="sally_oneals.html">Sally O’Neal’s Pizza Hotline</a></li>
+      </ul>
+    </nav>
+    <a class="hmbgr" onclick="toggleNavBar()"><i class="fa fa-bars"></i></a>
+  </header>
+  <div id="tampa_pizzahero"></div>
+  <main>
+    <h1>Tampa Pizza Company</h1>
+    <p>Tampa Pizza Company specializes in vegan, vegetarian, and dairy-free pies, as well as delicious meat options.</p>
+    <h2>Our Menu</h2>
+    <table>
+      <tr>
+        <th>Pizza</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Bruschetta Pizza</td>
+        <td>Tomato, basil, mozzarella, balsamic glaze</td>
+        <td>$14</td>
+      </tr>
+      <tr>
+        <td>Melissa’s Meatball Pie</td>
+        <td>Tomato, mozzarella, meatballs, ricotta</td>
+        <td>$16</td>
+      </tr>
+      <tr>
+        <td>BBQ Chicken Pizza</td>
+        <td>BBQ sauce, chicken, red onion, cilantro</td>
+        <td>$15</td>
+      </tr>
+      <tr>
+        <td>Gluten-Free Margherita</td>
+        <td>Tomato, mozzarella, basil, gluten-free crust</td>
+        <td>$13</td>
+      </tr>
+    </table>
+    <h2>Contact Us</h2>
+    <form id="contactForm" onsubmit="return validateForm()">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="phone">Phone:</label><br>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" required></textarea><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </main>
+  <footer>
+    <p>Contact us: <a href="mailto:info@bestpizzatampa.com">info@bestpizzatampa.com</a></p>
+    <p>Follow us on social media:</p>
+    <div class="social-media">
+      <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+    </div>
+  </footer>
+  <script>
+    function validateForm() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var message = document.getElementById('message').value;
+
+      if (name == "" || email == "" || phone == "" || message == "") {
+        alert("All fields must be filled out");
+        return false;
+      }
+
+      var summary = "Name: " + name + ", Email: " + email + ", Phone: " + phone + ", Message: " + message;
+      alert(summary);
+      return false;
+    }
+  </script>
+</body>
+</html>
